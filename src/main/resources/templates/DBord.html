@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<table>
+
+
+    <tr>
+
+        <th>Lecture Id</th><th>Positive Feedback</th>
+    </tr>
+    <tr th:each="stu :${feed}">
+    <td th:text="${stu.id}"></td>
+        <td th:text="${stu.message}"></td>
+        <td></td>
+    </tr>
+    </td>
+
+</table>
+
+</html>

@@ -1,0 +1,139 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <script type="text/javascript" src="webjars/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript" src="webjars/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" th:src="@{js/m.js}" src="../static/js/m.js"></script>
+    <link  rel="stylesheet" href="webjars/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"/>
+    <title>#Admin Lecture</title>
+</head>
+<button class="btn btn-success "><a href="javascript:history.back()">Go Back</a></button>
+<body>
+
+<div class="container">
+    <button class="btn btn-success nBtn">New</button>
+
+    <div class="card">
+        <div class="card-block">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                  
+                    <th> marks </th>
+                    <th> student id </th>
+                    <th> subject id </th>
+
+
+
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr th:each="stu :${marks.content}">
+                    
+                    <td th:text="${stu.marks}"></td>
+                    <td th:text="${stu.id}"></td>
+                    <td th:text="${stu.sid}"></td>
+
+                    <td> <a  th:href="@{deletemarks/(marksid=${stu.marksid})}" class="btn btn-danger delBtn">Delete</a> </td>
+                    <td> <a  th:href="@{findmarks/(marksid=${stu.marksid})}" class="btn btn-primary eBtn">Edit</a> </td>
+
+
+                </tr>
+
+                </tbody>
+
+
+            </table>
+            <ul class="nav nav-pills">
+
+                <li class="nav-item"
+                    th:each="i : ${#numbers.sequence(0,marks.totalPages-1)}">
+                    <a th:href="@{/showlecture (page=${i})}" th:text="${i}" class="nav-link"
+                       th:classappend="${currentpage}==${i}? 'active' : '' "
+                    ></a>
+                </li>
+            </ul>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <div class="myForm">
+
+        <form th:action="@{/addstmarks}" method="post">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel"> Update or Create</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            
+
+                            <div class="form-group">
+                                <label for="marks" class="col-form-label">marks:</label>
+                                <input type="text" class="form-control" id="marks" name="marks" value="" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="id" class="col-form-label">Student ID:</label>
+                                <input type="text" class="form-control" id="id" name="id" value="" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sid" class="col-form-label">Subject id:</label>
+                                <input type="text" class="form-control" id="sid" name="sid" value="" />
+                            </div>
+
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <input type="submit" class="btn btn-primary"  value="Save"/>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </form>
+    </div>
+
+
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="alert alert-danger">Are You Sure You want to Delete this Student</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a  href="" class="btn btn-danger" id="delRef">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+
+</html>

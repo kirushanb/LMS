@@ -1,0 +1,12 @@
+div.footer{
+background-color: rgba(31,120,225,.89);
+border-radius:0px 0px 5px 5px;
+padding: 10px;
+font-size: 15px;
+font-family: impact;
+}
+
+div.best-works-on{
+font-size: 15px;
+color: blue;
+}

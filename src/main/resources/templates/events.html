@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="blog/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="blog/vendor/jquery-ui/jquery-ui.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="blog/css/style.css">
+</head>
+<style>
+    body {margin: 0;}
+
+    ul.topnav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    ul.topnav li {float: left;}
+
+    ul.topnav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+    ul.topnav li a.active {background-color: #4CAF50;}
+
+    ul.topnav li.right {float: right;}
+
+    @media screen and (max-width: 600px) {
+        ul.topnav li.right,
+        ul.topnav li {float: none;}
+    }
+</style>
+
+<body>
+
+<ul class="topnav">
+    <li><a style="background-color: #6c757d" class="active"   href="/adminbk">Home</a></li>
+<!--    <li><a href="#news">News</a></li>-->
+<!--    <li><a href="#contact">Contact</a></li>-->
+    <li class="right"><a href="/sci.admin">Logout</a></li>
+</ul><br><br><br>
+ 
+
+<div class="main">
+
+    <div class="header">
+        <img src="blog/images/header-text.png" alt="">
+        <img src="blog/images/dots.png" alt="">
+    </div>
+    <div  th:each="data :${sucess}">
+                  
+                    <input type="text"  th:value="${data}"  readonly/>
+                </div>
+    
+    <div class="container">
+        <form id="booking-form" class="booking-form" method="POST" action="/addevent">
+            <div class="form-group">
+                <div class="form-destination">
+                    <label for="destination">Event</label>
+                    <input type="text" id="name" name="name" placeholder="EG. workshop" />
+                </div>
+                <div class="form-date-from form-icon">
+                    <label for="date_from">From</label>
+                    <input type="text" id="date_from" name="fdate" class="fdate" placeholder="Pick a date" />
+                    <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
+                </div>
+                <div class="form-date-to form-icon">
+                    <label for="date_to">To</label>
+                    <input type="text" id="date_to" name="edate" class="edate" placeholder="Pick a date" />
+                    <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
+                </div>
+
+
+
+
+
+
+                <div class="form-submit">
+                    <input type="submit" id="submit" class="submit" value="Add Event" />
+                </div>
+
+
+
+
+
+            </div>
+            <br>
+            <div class="form-destination">
+                <label for="comment">Comment:</label>
+                <textarea class="form-control" name="comment" rows="8" id="comment"></textarea>
+
+
+            </div>
+            
+            
+
+
+
+        </form>
+
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+<!-- JS -->
+<script src="blog/vendor/jquery/jquery.min.js"></script>
+<script src="blog/vendor/jquery-ui/jquery-ui.min.js"></script>
+<script src="blog/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

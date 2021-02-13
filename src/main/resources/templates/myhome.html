@@ -1,0 +1,460 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>lms-university </title>
+<link href="lms/css/buttons.css" rel="stylesheet" type="text/css"/>
+<link href="lms/css/horizontal Rules.css" rel="stylesheet" type="text/css"/>
+<link href="lms/css/top-header.css" rel="stylesheet" type="text/css"/>
+<link href="lms/css/main-menu.css" rel="stylesheet" type="text/css"/>
+<link href="lms/css/login.css" rel="stylesheet" type="text/css"/>
+<link href="lms/css/lower-footer.css" rel="stylesheet" type="text/css"/>
+
+
+<script src="lms/js/change.js" type="text/javascript"></script>
+<script src="lms/js/nsbm-logo.js" type="text/javascript"></script>
+<script src="lms/js/hr.js" type="text/javascript"></script>
+<script src="lms/js/hr2.js" type="text/javascript"></script>
+<script src="lms/js/mouse-over.js" type="text/javascript"></script>
+<script src="lms/js/mouse-over-text.js" type="text/javascript"></script>
+
+<style type="text/css">
+	.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: Black;
+   color: white;
+   text-align: center;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: absolute;
+  /*bottom: 23px;
+  right: 28px;
+  width: 280px;*/
+  top: 100px;
+  right: 8px;
+  width: 120px;
+}
+
+.open-button2 {
+  background-color: #60687b;
+  background-color:#ece7f3!important;
+  padding: 12px 16px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: inherit;
+  /*bottom: 23px;
+  right: 28px;
+  width: 280px;*/
+  top: 910px important!;
+  right: 1120px;
+  width: 230px;
+  margin-top: -82;
+}
+
+.open-button3 {
+  background-color: #60687b;
+   background-color:#ece7f3!important;
+  padding: 12px 16px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: inherit;
+  /*bottom: 23px;
+  right: 28px;
+  width: 280px;*/
+  top: 985px;
+  right: 1120px;
+  width: 230px;
+    margin-top: -130;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 50;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.form-popup2 {
+ display: none;
+  position: fixed;
+  bottom: 100;
+  left: : 350px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.form-popup3 {
+  display: none;
+  position: fixed;
+  bottom: 100;
+  left: : 350px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: #e9eceb;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+div.menu{
+    margin-top: 210px;
+    width: 230;
+}
+
+.head{
+  width: 230px !important;
+  background-color:#ece7f3!important;
+}
+
+.lecfrm{
+ width: 230px !important;
+}
+
+
+.googleCalendar{
+  height: 0;
+  width: 50%;
+
+}
+
+.googleCalendar iframe{
+  position: absolute;
+  top: 750;
+  left: 930;
+  width: 30%;
+  height: 40%;
+}
+
+.hestyle{
+    position: absolute!importent;
+  top: -180!importent;
+  left:-90;
+  
+}
+.textstyle{
+  font-size: 20px;
+  font-style="oblique"
+    position: absolute!importent;
+  top: -90!importent;
+  left:-50;
+}
+
+.hed{
+
+font-style="oblique!importent"
+}
+
+.all-buttons{
+  position: absolute;
+  top: -10;
+  left:-50;
+ 
+
+}
+
+.world{
+  position: absolute;
+  margin-top: 27;
+  left:-50;
+ 
+}
+.wrldbank{
+  position: absolute;
+  margin-top: 44;
+  left:-50;
+}
+
+.textmain{
+  font-size: 20px;
+  font-style="oblique";
+  color:white!important;
+  }
+  .textmain2{
+    font-size: 20px;
+  font-style="oblique";
+  }
+</style>
+
+
+   
+   
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+
+</head>
+
+<body style="background-color:white">
+  <div class="panel panel-primary">
+</div>
+<div class="header-menu">
+<div class="hestyle">
+<p align="right" class="textstyle" style="font-weight:bold; font-variant: small-caps; color:rgb(7,44,169)">Student login <button class="btn-md login btn btn-success" id="log" onmouseover="onmouse2()" onmouseout="mouseout2()" style="text-decoration:none;color:rgb(5,32,122);"  onclick="openForm()" >Login &nbsp;<span class="glyphicon glyphicon-log-in"></span></button></p>
+</div>
+<a href="/"><img id="nsbm" height="150px" width="150px"></a>
+<h1 align="center" class="hed" style="margin-top:-150px;font-size:40px;color:rgba(2,38,181,.99);font-family:impact">Science College</h1>
+
+
+
+<!-- <button class="open-button" onclick="openForm()">Login</button>
+ -->
+<div class="form-popup" id="myForm">
+  <form action="/logstudent" class="form-container"  autocomplete="off">
+    <h1>Student Login</h1>
+
+    <label for="email"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username"  value="EnterUsername" name="Username" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" value="EnterPassword "  name="Password" required>
+
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+</div>
+<hr id="col2"/>
+<div class="all-buttons">
+
+<div class="home">
+<a href="/" style="text-decoration: none;color: #ffffff;">Home</a>
+</div>
+<div class="course">
+<button class="coursebtn">Courses</button>
+ <div class="course-content">
+  <a href="/computing">SCHOOL OF COMPUTING</a>
+    <a href="/bus">SCHOOL OF MANAGEMENT</a>
+    <a href="/eng">SCHOOL OF ENGINEERING</a>
+ </div>
+ </div>
+<div class="facil"><a href="/fac" style="text-decoration: none;color: white;">Facilities</a></div>
+<div class="student">
+<button class="studentbtn">Student</button>
+ <div class="student-content">
+    <a href="/act">ACTIVITIES</a>
+ </div>
+ </div>
+<div class="about"><a href="/abt" style="text-decoration: none;color: white;">About Us</a></div>
+<div class="about"><a href="/cnt" style="text-decoration: none;color: white;">Contac Us</a></div>
+</div>
+
+<img id="pic" src="lms/imges/1.png" class="wrldbank" onmouseover="onmouse()" width="1049px" height="513px" style="position:absolute; left:280px; top:190px; z-index:0; border-style:inset; border-color:rgb(11,100,88); border-radius:4px;"/>
+
+
+
+<img src="lms/imges/galler.png" class="world" width="200px" height="200px" style="position:absolute; left:4px; top:190px; opacity:0.9; z-index:0; border-style:inset; border-color:rgb(11,100,88); border-radius:4px;">
+
+<div class="main-menu" >
+<div class="menu">
+<caption class="textmain">MAIN MENU</caption>
+</div>
+<div class="menu-content">
+
+   <div class="col-md-12">
+
+   </div>
+<table class="menu" >
+
+
+
+<tr><td>
+<img src="lms/book3.png"   width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217); ">university  Research Publications</a><br/>
+</td>
+</tr>
+<tr><td>
+<img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);">university  Quarterly News</a><br/>
+</td></tr>
+<tr><td>
+<img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);">Student Handbooks</a><br/>
+</td></tr>
+<tr><td>
+<img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);">Award Handbooks</a><br/>
+</td></tr>
+<tr><td>
+<img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);">Regulations</a><br/>
+</td></tr>
+<tr><td>
+<img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);">Examination Time Tables</a><br/>
+</td></tr>
+<tr><td>
+<img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);">Class Time Tables</a><br/>
+</td></tr>
+<tr><td>
+<img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);" >Library Catalog</a><br/>
+</td></tr>
+<tr><td>
+<img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);">Plymouth DLE</a><br/>
+</td></tr>
+<tr><td>
+<img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);">Academic Counselling and Pastoral Care</a><br/>
+</td></tr>
+
+</table>
+<div class="googleCalendar">
+  <iframe src="https://calendar.google.com/calendar/embed?title=Put%20your%20Title%20here&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=8d3fc8l9g04n7r9im45fsn08ak%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</div>
+</div>
+</div><br><br><br><br><br><br><br>
+
+
+
+
+<div class="padding">
+<button class="open-button3" onclick="openForm3()"><b>Feedback</b></button>
+
+
+<div class="form-popup3" id="myForm3">
+  <form action="/addfeedbk" class="form-container">
+    <h3> feedback</h3>
+    <h1>Please  Login</h1>
+   
+
+    <label for="email"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="Username" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="Password" required>
+
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm3()">Close</button>
+  </form>
+</div>
+
+</div>
+<form action="/pos">
+<button class="open-button2" ><b>learderboard</b></button>
+</form>
+<div class="form-popup2" id="myForm2">
+  <form action="/pos" class="form-container">
+    <h1>Please Login</h1>
+
+    <label for="email"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="Username" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="Password" required>
+
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm2()">Close</button>
+  </form>
+</div>
+
+   
+<div class="head">
+<caption class="textmain"><h4><b>Lectures(only) LOGIN<b></b></h4></caption>
+</div><br>
+<div class="up">
+<table>
+<form class="lecfrm" action="/leclog" method="post" name="log" autocomplete='off'>
+<tr><td class="textmain2" style="font-weight:bold;  color:rgb(7,44,169)"><h4><b>Username</b></h4>
+<input type="text" class="user form-control" name="Username" value="PleaseEnterUsername"><br/>
+</tr></td>
+
+<tr><td class="textmain2" style="font-weight:bold; font-variant: small-caps; color:rgb(7,44,169)"><h4><b>Password</b></h4>
+<input type="password" class="pass form-control" name="Password" value="EnterPassword"><br/>
+</tr></td>
+
+<tr><td> <button class="btn-md login btn btn-success" style="text-decoration:none;color:rgb(5,32,122);margin-left:165;">Login &nbsp;<span class="glyphicon glyphicon-log-in"></span></button>
+</tr></td>
+</form>
+</table>
+</div><br>
+
+<br><br>
+
+<br>
+
+<div class="footer">
+<p align="center">Science College No 309, High Level Rd, Colombo 05, Sri Lanka</p>
+</div>
+
+<div class="best-works-on">
+
+</div>
+</body>
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+function openForm2() {
+  document.getElementById("myForm2").style.display = "block";
+}
+
+function closeForm2() {
+  document.getElementById("myForm2").style.display = "none";
+}
+
+function openForm3() {
+  document.getElementById("myForm3").style.display = "block";
+}
+
+function closeForm3() {
+  document.getElementById("myForm3").style.display = "none";
+}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</html>

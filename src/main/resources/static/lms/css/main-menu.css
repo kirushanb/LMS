@@ -1,0 +1,41 @@
+/*for whole content of main menu*/
+table.menu{
+font-weight: bold;
+font-size: 15px;
+font-family: serif;
+border-collapse: collapse;
+width: 17%;
+background-color: rgb(242,244,255);
+}
+
+div.menu-content td{
+padding: 8px;
+text-align: left;
+border-bottom: 1px solid #ddd;
+color: rgb(201,251,100);
+}
+
+div.menu-content tr:hover{
+background-color: rgba(214,222,254,.35);
+}
+
+
+div.menu-content td:hover{
+color: rgb(201,251,100);
+} 
+
+/*caption*/
+div.menu{
+background-color: rgb(31,120,228);
+width: 16%;
+border-radius: 0px 0px 0px 6px;
+color: rgb(37,40,61);
+font-weight: bold;
+font-size: 14px;
+font-family: serif;
+padding: 8px;
+}
+
+div.main-menu{
+margin-top:200px;
+}

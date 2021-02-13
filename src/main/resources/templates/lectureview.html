@@ -1,0 +1,295 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+            <h4 class="text-white">Collapsed content</h4>
+            <span class="text-muted">Toggleable via the navbar brand.</span>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+</div>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation | Adminpro - Adminpro Admin Template</title>
+    <meta name="description" content="Thanks for purchasing Huge. If you need any support, please contact with us.">
+    <meta name="author" content="lucidtemplate">
+    <meta name="copyright" content="lucidtemplate">
+    <link rel="shortcut icon" type="dash/image/png" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="dash/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dash/css/tree-viewer.css">
+    <link rel="stylesheet" href="dash/css/style.css">
+
+    <style>
+        p.oblique {
+            font-style: oblique;
+            font-size:20px;
+        }
+
+        h5.oblique {
+            font-style: oblique;
+            font-size:20px;
+        }
+        .img {
+            background-color: lavenderblush;
+            border-radius: 10%;
+
+            height: 60%;
+            width: 100%;
+        }
+        h1.texts{
+            font-style: oblique;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+<div class="wrapper">
+    <div class="left-side">
+        <div class="logo">
+            <img src="dash/img/logo.png" alt="" />
+        </div>
+        <div class="left-content">
+            <ul role="tablist">
+                <li role="presentation" class="active"><a href="#one" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-home"></i></span>Welcome</a></li>
+                <li role="presentation"><a href="#two" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-folder"></i></span>Subjects</a></li>
+                <li role="presentation"><a href="#three" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-code"></i></span>Futer Events</a></li>
+                <li role="presentation"><a href="#six" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-slideshare"></i></span>Message's</a></li>
+                <li role="presentation"><a href="#source" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-thumbs-up"></i></span>FeedBack</a></li>
+                <li role="presentation"><a href="#support" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-support"></i></span>Support</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>Science College</p>
+        </div>
+    </div>
+    <div class="right-side">
+        <div class="right-content" >
+            <div id="one" class="content active fade in" th:each="lec :${ldata}">
+                <h1><span th:text= " ${lec.Name}"> </span> - Welcome To Lecture Dashbord</h1>
+                <div class="content-welcome">
+                    <p>
+
+                    </p>
+                </div>
+                <div class="" th:each="lec :${ldata}">
+
+
+                    <div class="col-md-12">
+                        <div class="col-md-5">
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 class="oblique" style="color:blue;">Name </h5>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input class="form-control oblique"  style="font-size:18px; font-style: oblique;" type="text"  th:value="${lec.Name}"   readonly>
+                                        <!--                                    <h5 class="oblique"  th:text=  " ${lec.Name}"></h5>-->
+                                    </div>
+
+                                </div>
+
+                            </div><br><br><br><br>
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 class="oblique" style="color:blue;">Lecture_ID</h5>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input class="form-control oblique" style="font-size:18px; font-style: oblique; font-style: oblique;"  type="text"  th:value="${lec.id}"   readonly>
+                                    </div>
+
+                                </div>
+
+                            </div><br><br><br><br>
+
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <th> <h5 class="oblique" style="color:blue;" >Email</h5></th>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input class="form-control oblique" type="text"  style="font-size:18px; font-style: oblique;"  th:value="${lec.Email}"   readonly>
+                                    </div>
+
+                                </div>
+
+                            </div><br><br><br><br>
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 class="oblique" style="color:blue;">Username </h5>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input class="form-control oblique" type="text"  style="font-size:18px ; font-style: oblique;"  th:value="${lec.Username}"   readonly>
+                                    </div>
+
+                                </div>
+
+                            </div><br><br><br><br>
+
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 class="oblique" style="color:blue;"> Password</h5>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input class="form-control oblique" type="text" style="font-size:18px ; font-style: oblique;"   th:value="${lec.Password}"   readonly>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="col-md-7">
+                            <img  class="img"src="dash/img/lecdash.png" />
+
+                        </div>
+                    </div>
+
+                    <br>
+
+
+                </div>
+            </div>
+            <div id="two" class="content fade"  th:each="stu :${data}">
+                <h1 class="texts">Subjects For Consider</h1>
+
+
+
+                <table class="table table-striped">
+                    <thead style="background-color: #b3b3cc">
+                    <tr>
+                        <th>Subject Code</th>
+                        <th>Subject Name</th>
+                        <th>Lecture  Id </th>
+                    </tr>
+                    </thead>
+                    <tbody style="background-color:#d6d6c2">
+                    <tr th:each="stu :${data}">
+                        <td th:text="${stu.sid}"></td>
+                        <td th:text="${stu.sname}"></td>
+                        <td th:text="${stu.id}"></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <div id="three" class="content fade">
+
+                <h1 class="texts"> Futer Events </h1>
+                <div><p class="oblique">IIT organinzing  Events.You can find hear </p> </div><br>
+
+
+                <div class="alert alert-danger">
+                    <strong>Note!</strong>  Plece Note Future events are not complesory For all member of University
+                </div>
+
+                <div>
+
+
+
+                    <table class="table table-striped">
+
+                        <thead style="background-color: #b3b3cc">
+                        <tr>
+                            <th> Event  </th>
+                            <th> From  </th>
+                            <th> To  </th>
+                            <th> Comment  </th>
+                        </tr>
+                        </thead>
+                        <tbody style="background-color:#d6d6c2">
+                        <tr th:each="evt :${events}">
+                            <td th:text="${evt.name}" /></td>
+                            <td  th:text="${evt.fdate} " /></td>
+                            <td th:text="${evt.edate}" /></td>
+                            <td th:text="${evt.comment}" /></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+            <div id="six" class="content fade">
+
+                <div class="plugins-area">
+                    <h1 class="texts">Plugins</h1>
+
+                </div>
+
+
+
+
+                <pre>
+
+            </div>
+
+
+            <div id="source" class="content fade">
+                <h1 class="texts"> Sources &amp; Credits </h1>
+
+
+                <div>
+                    <h1>hello</h1>
+                </div>
+
+
+            </div>
+            <div id="support" class="content fade">
+                <h1 class="texts">Supports </h1>
+                <p>Thank you for reading the documentaion. If you still have any question or any problem, please contact with us. We will give you best support. Thanks.</p>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="dash/js/jquery-3.1.0.min.js"></script>
+<script src="dash/js/bootstrap.min.js"></script>
+<script src="dash/js/jstree.min.js"></script>
+<script src="dash/js/jstree.active.js"></script>
+<script src="dash/js/main.js"></script>
+</body>
+
+</html>
+

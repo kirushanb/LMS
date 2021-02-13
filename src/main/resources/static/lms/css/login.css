@@ -1,0 +1,63 @@
+/*caption for login*/
+div.head{
+background-color: rgb(31,120,228);
+width: 16%;
+border-radius: 0px 0px 0px 6px;
+color: rgb(37,40,61);
+font-weight: bold;
+font-size: 14px;
+font-family: serif;
+padding: 8px;
+}
+
+input.user,input.pass{
+background-color: rgb(244,247,251);
+width: 250px;
+padding: 4px;
+border-color: rgba(26,108,185,.40);
+}
+
+input:hover{
+background-color: rgb(235,237,254);
+}
+
+input:active{
+background-color: rgb(237,240,248);
+}
+
+div.up td{
+color: rgb(10,0,193);
+font-weight: bold;
+font-size: 12px;
+font-family: tahoma;
+}
+
+/*login button*/
+div.up td input.login-button{
+    background-color: rgba(52,108,239,.95);
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    display: inline;
+    font-size: 11px;
+    cursor: pointer;
+    margin-left: 385px;
+    border-radius: 0px 0px 5px 0px;
+    font-family: tahoma;
+    opacity: 0.97;
+    color: #ffffff;
+    
+}
+
+div.up td input.login-button:hover{
+    background-color: rgba(34,65,183,.95);
+}
+
+div.up td input.login-button:active{
+     transform: translateY(4px);
+}
+
+div.new-account{
+    font-size: 15px;
+    font-family: tahoma;
+}
