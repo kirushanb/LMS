@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<h1>hello</h1>
+<table>
+ <tr th:each="rating :${rating}">
+<td th:text="${rating.id}"></td>
+<td th:text="${rating.fid}"></td>
+<td th:text="${rating.message}"></td>
+
+
+
+
+
+
+</tr>
+
+</table>
+
+</html>

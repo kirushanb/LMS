@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contact V10</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="sub/images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="sub/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="sub/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="aub/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="sub/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="sub/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="sub/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="sub/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="sub/css/util.css">
+    <link rel="stylesheet" type="text/css" href="sub/css/main.css">
+    <!--===============================================================================================-->
+<style>
+    body {margin: 0;}
+
+    ul.topnav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    ul.topnav li {float: left;}
+
+    ul.topnav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+    ul.topnav li a.active {background-color: #4CAF50;}
+
+    ul.topnav li.right {float: right;}
+
+    @media screen and (max-width: 600px) {
+        ul.topnav li.right,
+        ul.topnav li {float: none;}
+    }
+</style>
+</head>
+<body>
+
+<ul class="topnav">
+    <li><a style="background-color: #6c757d" class="active"  href="/adminbk">Home</a></li>
+<!--    <li><a href="#news">News</a></li>-->
+<!--    <li><a href="#contact">Contact</a></li>-->
+    <li class="right"><a href="/sci.admin">Logout</a></li>
+</ul><br><br><br>
+ 
+<body>
+<div class="wrap-input100 validate-input" th:each="data :${sucess}">
+                <input class="input100" type="text"   th:value="${sucess}" readonly >
+                
+            </div>
+
+<div class="container-contact100">
+
+    <div class="wrap-contact100">
+        <form action="/addsubjrct" method="post" class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Add Subjects
+				</span>
+
+            <div class="wrap-input100 validate-input" data-validate="Please enter your name">
+                <input class="input100" type="text" name="sid" placeholder="Subject ID">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate = "Please enter your email: e@a.x">
+                <input class="input100" type="text" name="sname" placeholder="Subject Name">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate = "Please enter your phone">
+                <input class="input100" type="text" name="id" placeholder="Lecture ID">
+                <span class="focus-input100"></span>
+            </div>
+
+
+
+
+
+            <div class="container-contact100-form-btn">
+                <button class="contact100-form-btn">
+						<span>
+							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+							ADD
+						</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+<script src="sub/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="sub/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="sub/vendor/bootstrap/js/popper.js"></script>
+<script src="sub/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="sub/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="sub/vendor/daterangepicker/moment.min.js"></script>
+<script src="sub/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="sub/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>

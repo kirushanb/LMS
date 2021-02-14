@@ -1,0 +1,109 @@
+<html xmlns:th="http://www.thymeleaf.org">
+ <head>
+  <title>SCHOOL OF COMPUTING</title>
+  <style>
+ div.choose a,div.choose p{
+text-decoration:none;
+color: rgb(5,32,122);
+font-weight: bold; 
+font-size: 12px;
+}
+
+div.choose a:hover{
+text-decoration:none;
+color: rgb(230,202,11);
+font-weight: bold; 
+font-size: 12px;
+}
+
+div.search{
+float: right;
+}
+div.search input,div.search select{
+width: 250px;
+}
+  </style> 
+<link href="lms/css/years.css" type="text/css" rel="stylesheet">
+<link href="lms/css/table.css" type="text/css" rel="stylesheet">
+<link href="lms/css/lower-footer.css" rel="stylesheet" type="text/css"/>
+<link href="lms/css/horizontal Rules.css" rel="stylesheet" type="text/css"/>
+<link href="lms/css/top-header.css" rel="stylesheet" type="text/css"/>
+
+<script src="lms/js/nsbm-logo.js" type="text/javascript"></script>
+<script src="lms/js/hr.js" type="text/javascript"></script>
+<script src="lms/js/hr2.js" type="text/javascript"></script>
+<script src="lms/js/mouse-over.js" type="text/javascript"></script>
+<script src="lms/js/mouse-over-text.js" type="text/javascript"></script>
+<script src="lms/js/forgot-pw validation.js" type="text/javascript"></script>
+
+
+</head>
+<body>
+<hr id="col"/>
+<div class="header-menu">
+  <a href="nsbm.html"><img id="nsbm" height="150px" width="150px"></a>
+<p align="right" style="font-family:serif; margin-top:-100px; font-weight:bold; font-variant: small-caps; color:rgb(7,44,169)">you are not logged in.<a class="login" id="log" onmouseover="onmouse2()" onmouseout="mouseout2()" style="text-decoration:none;color:rgb(5,32,122)" href="">(Login)</a></p>
+</div>
+<hr id="col2"/>
+<br/><br/>
+  
+<div class="search">
+Search Courses : <input type="text" name="search" placeholder="Search..">
+<input style="width: 60px;" type="button" value="Search"><br><br>
+
+   Course Categoris : <select>
+ 
+   <option value="">SCHOOL OF COMPUTING / Year 3</option>
+   <option value="">SCHOOL OF COMPUTING / Year 3 / Limkokwing Modules</option>
+   <option value="">SCHOOL OF COMPUTING / Year 3 / UCD Modules</option>
+   <option value="">SCHOOL OF COMPUTING / Year 4</option>
+   <option value="">SCHOOL OF COMPUTING / Year 4 / UCD Modules</option>
+   <option value="">SCHOOL OF COMPUTING / PGD</option>
+   <option value="">SCHOOL OF COMPUTING / Other</option>
+   <option value="">SCHOOL OF COMPUTING / Other / PLYMOUTH 2019</option>
+   <option value="">SCHOOL OF COMPUTING / Other / UCD (2019)</option>
+   <option value="" selected="selected">SCHOOL OF MANAGEMENT</option>
+   <option value="">SCHOOL OF MANAGEMENT / PGD</option>
+   <option value="">SCHOOL OF MANAGEMENT / PGD / Batch-03 (2019)</option>
+   <option value="">SCHOOL OF MANAGEMENT / PGD / Batch-04 (2019)</option>
+   <option value="">SCHOOL OF MANAGEMENT / UCD</option>
+   <option value="">SCHOOL OF MANAGEMENT / UGC </option>
+   <option value="">SCHOOL OF MANAGEMENT / UGC  / BSc in Business Management (UGC) - Special      15-F2</option>
+   <option value="">SCHOOL OF MANAGEMENT / MSC</option>
+   <option value="">SCHOOL OF MANAGEMENT / Foundation</option>
+   <option value="">SCHOOL OF MANAGEMENT / PLYMOUTH</option>
+   <option value="">SCHOOL OF ENGINEERING</option></select>
+
+</div>
+<br/>
+<div class="choose">
+<a href="nsbm.html"><p>LMS</a><img src="lms/arrow.png" height="15px" width="15px"/>
+COURSE CATEGORIES<img src="lms/arrow.png" height="15px" width="15px"/>
+SCHOOL OF COMPUTING</p></div>
+<br/>
+  
+  <h3 align="center" style="color:blue;font-family:arial"><u>Sub-Categories</u></h3><br>
+
+ <center> <a  href="/y1" class="b"> Year 01 </a> </center><br>
+
+  <center> <a href="/y2" class="b" > Year 02 </a> </center><br>
+
+   <center><a href="/y3" class="b" > Year 03 </a> </center><br>
+
+  <center> <a href="/y4" class="b" > Year 04 </a> </center><br>
+
+   <center><a href="/pgd" class="b"> PGD </a> </center><br>
+
+ <center> <a href="/other" class="b"> Other </a><center><br><br>
+ 
+<br/><br/><br/>
+<div class="footer">
+<p align="center">Science College No 309, High Level Rd, Colombo 05, Sri Lanka.
+<br/>Telephone: +94(11)567 2545|5673535 - Email:info@lms.lk</p>
+</div>
+<p></P>
+
+
+
+</body>
+</html>

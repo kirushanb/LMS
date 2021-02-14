@@ -1,0 +1,186 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <script type="text/javascript" src="webjars/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript" src="webjars/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" th:src="@{js/my.js}" src="../static/js/my.js"></script>
+    <link  rel="stylesheet" href="webjars/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"/>
+    <title>#Admin Lecture</title>
+</head>
+<style>
+    body {margin: 0;}
+
+    ul.topnav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    ul.topnav li {float: left;}
+
+    ul.topnav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+    ul.topnav li a.active {background-color: #4CAF50;}
+
+    ul.topnav li.right {float: right;}
+
+    @media screen and (max-width: 600px) {
+        ul.topnav li.right,
+        ul.topnav li {float: none;}
+    }
+</style>
+
+<body>
+
+<ul class="topnav">
+    <li><a style="background-color: #6c757d" class="active"   href="/adminbk">Home</a></li>
+<!--    <li><a href="#news">News</a></li>-->
+<!--    <li><a href="#contact">Contact</a></li>-->
+    <li class="right"><a href="/sci.admin">Logout</a></li>
+</ul><br><br><br>
+
+
+<div class="container">
+    <button class="btn btn-success nBtn">New</button>
+
+    <div class="card">
+        <div class="card-block">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th> Id </th>
+                    <th> Name </th>
+                    <th> Email </th>
+                    <th> Username </th>
+                    <th> Password </th>
+
+
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr th:each="stu :${data.content}">
+                    <td th:text="${stu.id}"></td>
+                    <td th:text="${stu.Name}"></td>
+                    <td th:text="${stu.Email}"></td>
+                    <td th:text="${stu.Username}"></td>
+                    <td th:text="${stu.Password}"></td>
+                    <td> <a  th:href="@{deletelecture/(id=${stu.id})}" class="btn btn-danger delBtn">Delete</a> </td>
+                    <td> <a  th:href="@{findlecture/(id=${stu.id})}" class="btn btn-primary eBtn">Edit</a> </td>
+
+
+                </tr>
+
+                </tbody>
+
+
+            </table>
+            <ul class="nav nav-pills">
+
+                <li class="nav-item"
+                    th:each="i : ${#numbers.sequence(0,data.totalPages-1)}">
+                    <a th:href="@{/showlecture (page=${i})}" th:text="${i}" class="nav-link"
+                       th:classappend="${currentPage}==${i}? 'active' : '' "
+                    ></a>
+                </li>
+            </ul>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <div class="myForm">
+
+        <form th:action="@{/addlecture}" method="post">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel"> Update or Create</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="form-group">
+                                <label for="id" class="col-form-label">Id:</label>
+                                <input type="text" class="form-control" id="id" name="id" value="" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Name" class="col-form-label">Name:</label>
+                                <input type="text" class="form-control" id="Name" name="Name" value="" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Email" class="col-form-label">Email:</label>
+                                <input type="text" class="form-control" id="Email" name="Email" value="" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Username" class="col-form-label">Username:</label>
+                                <input type="text" class="form-control" id="Username" name="Username" value="" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Password" class="col-form-label">Password:</label>
+                                <input type="text" class="form-control" id="Password" name="Password" value="" />
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <input type="submit" class="btn btn-primary"  value="Save"/>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </form>
+    </div>
+
+
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="alert alert-danger">Are You Sure You want to Delete this lecturer</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a  href="" class="btn btn-danger" id="delRef">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <script type="text/javascript" src="webjars/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript" src="webjars/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" th:src="@{js/my.js}" src="../static/js/my.js"></script>
+    <link  rel="stylesheet" href="webjars/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"/>
+
+
+
+
+
+    <title>#Admin Students</title>
+</head>
+<button class="btn btn-success "><a href="/">HOME</a></button>
+<body>
+
+<div class="container">
+   
+
+    <div class="card">
+        <div class="card-block">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th> Id  </th>
+                    <th> Name </th>
+                    <th> Email </th>
+                    <th> Username </th>
+                    <th> Password </th>
+
+
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr th:each="stu :${data.content}">
+                    <td th:text="${stu.id}"></td>
+                    <td th:text="${stu.Name}"></td>
+                    <td th:text="${stu.Email}"></td>
+                    <td th:text="${stu.Username}"></td>
+                    <td th:text="${stu.Password}"></td>
+                   
+                    <td> <a  th:href="@{findstudents/(id=${stu.id})}" class="btn btn-primary eBtn">Edit</a> </td>
+
+
+                </tr>
+
+                </tbody>
+
+
+            </table>
+            <ul class="nav nav-pills">
+
+                <li class="nav-item"
+                    th:each="i : ${#numbers.sequence(0,data.totalPages-1)}">
+                    <a th:href="@{/showstudent (page=${i})}" th:text="${i}" class="nav-link"
+                    th:classappend="${currentPage}==${i}? 'active' : '' "
+                    ></a>
+                </li>
+            </ul>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <div class="myForm">
+
+        <form th:action="@{/savestudent}" method="post">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"> Update or Create</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                            <div class="form-group">
+                                <label for="id" class="col-form-label">Id:</label>
+                                <input type="text" class="form-control" id="id" name="id" value="" />
+                            </div>
+
+                        <div class="form-group">
+                            <label for="Name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="Name" name="Name" value="" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Email" class="col-form-label">Email:</label>
+                            <input type="text" class="form-control" id="Email" name="Email" value="" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Username" class="col-form-label">Username:</label>
+                            <input type="text" class="form-control" id="Username" name="Username" value="" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Password" class="col-form-label">Password:</label>
+                            <input type="text" class="form-control" id="Password" name="Password" value="" />
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary"  value="Save"/>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        </form>
+    </div>
+
+
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="alert alert-danger">Are You Sure You want to Delete this Student</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a  href="" class="btn btn-danger" id="delRef">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation | Adminpro - Adminpro Admin Template</title>
+    <meta name="description" content="Thanks for purchasing Huge. If you need any support, please contact with us.">
+    <meta name="author" content="lucidtemplate">
+    <meta name="copyright" content="lucidtemplate">
+    <link rel="shortcut icon" type="dash/image/png" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="dash/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dash/css/tree-viewer.css">
+    <link rel="stylesheet" href="dash/css/style.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="left-side">
+            <div class="logo">
+                <img src="dash/img/logo.png" alt="" />
+            </div>
+            <div class="left-content">
+                <ul role="tablist">
+                    <li role="presentation" class="active"><a href="#one" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-home"></i></span>Welcome</a></li>
+                    <li role="presentation"><a href="#two" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-folder"></i></span>Subjects</a></li>
+                    <li role="presentation"><a href="#three" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-code"></i></span>Futer Events</a></li>
+                    <li role="presentation"><a href="#six" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-slideshare"></i></span>Message's</a></li>
+                    <li role="presentation"><a href="#source" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-thumbs-up"></i></span>FeedBack</a></li>
+                    <li role="presentation"><a href="#support" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-support"></i></span>Support</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>NSBM Green Uini</p>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="right-content" >
+                 <div id="one" class="content active fade in" th:each="lec :${ldata}">
+                    <h1><span th:text= " ${lec.Name}"> </span> - Welcome To Lecture Dashbord</h1>
+                    <div class="content-welcome">
+                        <p>
+
+                        </p>
+                    </div>
+                    <div class="" th:each="lec :${ldata}">
+                        <table   cellpadding="10">
+                            <tr>
+                            <td  cellpadding="10">
+                            <br> <h5 th:text=  " ${lec.Name}"></h5>
+                            <br> <h5 th:text= " ${lec.id}"></h5>
+                               <br> <h5 th:text= " ${lec.Email}"></h5>
+                                  <br>Username: <h5 th:text= " ${lec.Username}"></h5>
+                                   <br>Password: <h5 th:text= " ${lec.Password}"></h5>
+                                  </td>
+                                  <td>.                                   .</td>
+                                  <td  cellpadding="10">
+                               <img src="dash/img/lecdash.png" />
+                            </td>
+                                  </tr>
+                                  </table>
+
+                            <br>
+                            <br> Thank you for Loging & We are Hear to Make easyer Your Works <a href="https://colorlib.com/wp/forums/">here</a>.
+                            
+                            
+                            <
+                       
+                    </div>
+                </div>
+                <div id="two" class="content fade"  th:each="stu :${data}">
+                    <h1>Subjects For Consider</h1>
+                 Subject Code  <h4 th:text="${stu.sid}"></h4>
+                     Subject  <h4 th:text="${stu.sname}"></h4>
+                   
+                          
+                          
+                          
+          <table>                
+                            <thead>
+    <tr>
+        <th> Subject Code   -</th>
+        <th> Subject Name  -</th>
+        <th> Lecture  Id  </th>
+
+
+
+    </tr>
+
+    </thead>
+    <tbody>
+
+             <tr th:each="stu :${data}">
+                <td th:text="${stu.sid}"></td>
+                <td th:text="${stu.sname}"></td>
+                <td th:text="${stu.id}"></td>
+
+
+
+    </tr>
+
+    </tbody>
+</table>
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+
+
+
+                </div>
+                <div id="three" class="content fade">
+
+                    <h1> Futer Events </h1>
+                    <div>IIT organinzing  Events.You can find hear  </div>
+                    <pre>
+ Plece Note Future events are not complesory For all member of University
+</pre>
+                       <div   >
+                       
+                       <table   >
+                       <tr th:each="evt :${events}">
+                       <td><pre  th:text="${evt.name}" /></td>
+                       <td ><pre th:text="${evt.fdate} " / ></td>
+                       <td ><pre th:text="${evt.edate}" /></td>
+                        <td ><pre th:text="${evt.comment}" /></td>
+                       </tr>
+                       
+                       </table>
+                      
+                       </div>
+                </div>
+                 
+                <div id="six" class="content fade">
+
+				<div class="plugins-area">
+					<h1>Plugins</h1>
+					
+				</div>
+
+
+                    
+
+			<pre>
+	             
+                </div>
+
+
+                <div id="source" class="content fade">
+                    <h1> Sources &amp; Credits </h1>
+
+                    
+                    <div>
+                    <h1>hello</h1>
+                    </div>
+                    
+                    
+                </div>
+                <div id="support" class="content fade">
+                    <h1> Supports </h1>
+                    <p>Thank you for reading the documentaion. If you still have any question or any problem, please contact with us. We will give you best support. Thanks.</p>
+
+                </div>
+                       
+            </div>
+        </div>
+    </div>
+    <script src="dash/js/jquery-3.1.0.min.js"></script>
+    <script src="dash/js/bootstrap.min.js"></script>
+	<script src="dash/js/jstree.min.js"></script>
+    <script src="dash/js/jstree.active.js"></script>
+    <script src="dash/js/main.js"></script>
+</body>
+
+</html>
+
