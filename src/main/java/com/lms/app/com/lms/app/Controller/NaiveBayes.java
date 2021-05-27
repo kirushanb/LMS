@@ -10,10 +10,7 @@ package com.lms.app.com.lms.app.Controller;
 import java.io.*;
 import java.util.*;
 
-/**
- *
- * @author kon
- */
+
 public class NaiveBayes {
 
     private final Set<String> vocabularly;

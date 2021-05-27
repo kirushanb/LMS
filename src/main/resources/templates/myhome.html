@@ -1,6 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>lms-university </title>
+
 <link href="lms/css/buttons.css" rel="stylesheet" type="text/css"/>
 <link href="lms/css/horizontal Rules.css" rel="stylesheet" type="text/css"/>
 <link href="lms/css/top-header.css" rel="stylesheet" type="text/css"/>
@@ -81,6 +82,42 @@ body {font-family: Arial, Helvetica, sans-serif;}
     margin-top: -130;
 }
 
+    .open-button4 {
+        background-color: #60687b;
+        background-color:#ece7f3!important;
+        padding: 12px 16px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: inherit;
+        /*bottom: 23px;*/
+        /*right: 28px;*/
+        /*width: 280px;*/
+        top: 985px;
+        right: 1120px;
+        width: 230px;
+        margin-top: -47;
+    }
+
+
+    .open-button5 {
+        background-color: #60687b;
+        background-color:#ece7f3!important;
+        padding: 12px 16px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: inherit;
+        /*bottom: 23px;*/
+        /*right: 28px;*/
+        /*width: 280px;*/
+        top: 985px;
+        right: 1120px;
+        width: 230px;
+        margin-top: 2;
+    }
+
+
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
@@ -146,7 +183,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 /* Add a red background color to the cancel button */
 .form-container .cancel {
-  background-color: red;
+  background-color: #ff0000;
 }
 
 /* Add some hover effects to buttons */
@@ -249,7 +286,7 @@ font-style="oblique!importent"
 <p align="right" class="textstyle" style="font-weight:bold; font-variant: small-caps; color:rgb(7,44,169)">Student login <button class="btn-md login btn btn-success" id="log" onmouseover="onmouse2()" onmouseout="mouseout2()" style="text-decoration:none;color:rgb(5,32,122);"  onclick="openForm()" >Login &nbsp;<span class="glyphicon glyphicon-log-in"></span></button></p>
 </div>
 <a href="/"><img id="nsbm" height="150px" width="150px"></a>
-<h1 align="center" class="hed" style="margin-top:-150px;font-size:40px;color:rgba(2,38,181,.99);font-family:impact">Science College</h1>
+<h1 align="center" class="hed" style="margin-top:-150px;font-size:40px;color:rgba(2,38,181,.99);font-family:impact">Science University</h1>
 
 
 
@@ -304,7 +341,7 @@ font-style="oblique!importent"
 
 <div class="main-menu" >
 <div class="menu">
-<caption class="textmain">MAIN MENU</caption>
+<!--<caption class="textmain">MAIN MENU</caption>-->
 </div>
 <div class="menu-content">
 
@@ -315,7 +352,8 @@ font-style="oblique!importent"
 
 
 
-<tr><td>
+<tr>
+    <td>
 <img src="lms/book3.png"   width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217); ">university  Research Publications</a><br/>
 </td>
 </tr>
@@ -334,18 +372,20 @@ font-style="oblique!importent"
 <tr><td>
 <img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);">Examination Time Tables</a><br/>
 </td></tr>
-<tr><td>
-<img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);">Class Time Tables</a><br/>
-</td></tr>
-<tr><td>
-<img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);" >Library Catalog</a><br/>
-</td></tr>
-<tr><td>
-<img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);">Plymouth DLE</a><br/>
-</td></tr>
-<tr><td>
-<img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);">Academic Counselling and Pastoral Care</a><br/>
-</td></tr>
+<!--<tr><td>-->
+<!--<img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);">Class Time Tables</a><br/>-->
+<!--</td></tr>-->
+<!--<tr><td>-->
+<!--<img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);" >Library Catalog</a><br/>-->
+<!--</td></tr>-->
+<!--<tr><td>-->
+<!--<img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);">Plymouth DLE</a><br/>-->
+<!--</td></tr>-->
+<!--<tr><td>-->
+<!--<img src="lms/book3.png" width="30px" height="30px"/><a href="" style=" text-decoration:none; color:rgb(9,45,217);">Academic Counselling and Pastoral Care</a><br/>-->
+<!--</td>-->
+
+</tr>
 
 </table>
 <div class="googleCalendar">
@@ -382,6 +422,13 @@ font-style="oblique!importent"
 <form action="/pos">
 <button class="open-button2" ><b>learderboard</b></button>
 </form>
+
+
+  <a href="/sci.admin">
+      <button class="open-button4"><b>Admin(only)LOGIN</b></button>
+  </a>
+
+
 <div class="form-popup2" id="myForm2">
   <form action="/pos" class="form-container">
     <h1>Please Login</h1>
@@ -397,30 +444,51 @@ font-style="oblique!importent"
   </form>
 </div>
 
+
+  <div class="padding">
+      <button class="open-button5" onclick="openForm7()"><b>Lectures(only)Login</b></button>
+
+
+      <div class="form-popup3" id="myForm7">
+          <form action="/leclog" class="form-container">
+              <h3> Lectures(only) LOGIN</h3>
+              <h1> Login</h1>
+
+              <label for="email"><b>Username</b></label>
+              <input type="text" class="user form-control" name="Username" value="" required><br/>
+
+              <label for="psw"><b>Password</b></label>
+              <input type="password" class="pass form-control" name="Password" value="" required><br/>
+
+              <button type="submit" class="btn">Login</button>
+              <button type="button" class="btn cancel" onclick="closeForm7()">Close</button>
+          </form>
+      </div>
+
    
-<div class="head">
-<caption class="textmain"><h4><b>Lectures(only) LOGIN<b></b></h4></caption>
-</div><br>
-<div class="up">
-<table>
-<form class="lecfrm" action="/leclog" method="post" name="log" autocomplete='off'>
-<tr><td class="textmain2" style="font-weight:bold;  color:rgb(7,44,169)"><h4><b>Username</b></h4>
-<input type="text" class="user form-control" name="Username" value="PleaseEnterUsername"><br/>
-</tr></td>
+<!--<div class="head">-->
+<!--<caption class="textmain"><h4><b>Lectures(only) LOGIN<b></b></h4></caption>-->
+<!--</div><br>-->
+<!--<div class="up">-->
+<!--<table>-->
+<!--<form class="lecfrm" action="/leclog" method="post" name="log" autocomplete='off'>-->
+<!--<tr><td class="textmain2" style="font-weight:bold;  color:rgb(7,44,169)"><h4><b>Username</b></h4>-->
+<!--<input type="text" class="user form-control" name="Username" value="PleaseEnterUsername"><br/>-->
+<!--</tr></td>-->
 
-<tr><td class="textmain2" style="font-weight:bold; font-variant: small-caps; color:rgb(7,44,169)"><h4><b>Password</b></h4>
-<input type="password" class="pass form-control" name="Password" value="EnterPassword"><br/>
-</tr></td>
+<!--<tr><td class="textmain2" style="font-weight:bold; font-variant: small-caps; color:rgb(7,44,169)"><h4><b>Password</b></h4>-->
+<!--<input type="password" class="pass form-control" name="Password" value="EnterPassword"><br/>-->
+<!--</tr></td>-->
 
-<tr><td> <button class="btn-md login btn btn-success" style="text-decoration:none;color:rgb(5,32,122);margin-left:165;">Login &nbsp;<span class="glyphicon glyphicon-log-in"></span></button>
-</tr></td>
-</form>
-</table>
-</div><br>
+<!--<tr><td> <button class="btn-md login btn btn-success" style="text-decoration:none;color:rgb(5,32,122);margin-left:165;">Login &nbsp;<span class="glyphicon glyphicon-log-in"></span></button>-->
+<!--</tr></td>-->
+<!--</form>-->
+<!--</table>-->
+<!--</div><br>-->
 
-<br><br>
+<!--<br><br>-->
 
-<br>
+<!--<br>-->
 
 <div class="footer">
 <p align="center">Science College No 309, High Level Rd, Colombo 05, Sri Lanka</p>
@@ -453,6 +521,14 @@ function openForm3() {
 
 function closeForm3() {
   document.getElementById("myForm3").style.display = "none";
+}
+
+function openForm7() {
+    document.getElementById("myForm7").style.display = "block";
+}
+
+function closeForm7() {
+    document.getElementById("myForm7").style.display = "none";
 }
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

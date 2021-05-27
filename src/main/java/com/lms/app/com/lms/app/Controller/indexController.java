@@ -80,10 +80,8 @@ public class indexController {
     @RequestMapping("/logadmindash")
     public String logToAdmin(@RequestParam String Username, String Password) {
 
-
         if (adminrepo.findUser(Username) == null) {
-
-            return "admin";
+            return "adminlog";
         } else {
 
             Admin_account account = adminrepo.findUser(Username);
@@ -92,7 +90,6 @@ public class indexController {
                 return "admin";
             }
         }
-
 
         return "adminlog";
 
@@ -353,7 +350,6 @@ public class indexController {
         if (studentRepo.findbylog(Username) == null) {
             System.out.println("invalid Username");
             return "myhome";
-//            return "stloging";
 
         } else {
 
@@ -379,9 +375,9 @@ public class indexController {
                 return "stloging";
             }
 
-            return "myhome";
+
         }
-//        return "myhome";
+        return "myhome";
 
 
     }
@@ -435,8 +431,8 @@ public class indexController {
     public String addFeedback(@RequestParam String message, Positive positive, Negative negative, MiddleComments middleComments, Model model, discard discard) throws IOException {
 
         StanfordCoreNLP stanfordCoreNLP = Pipeline.getPipeline();
-//        String text = message;
-        CoreDocument coreDocument = new CoreDocument(message);
+        String text = message;
+        CoreDocument coreDocument = new CoreDocument(text);
         stanfordCoreNLP.annotate(coreDocument);
         List<CoreSentence> sentences = coreDocument.sentences();
 
